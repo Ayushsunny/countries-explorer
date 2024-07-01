@@ -5,10 +5,11 @@ import axios from 'axios';
 const apiClient = axios.create({
   baseURL: 'https://wft-geo-db.p.rapidapi.com/v1/geo',
   headers: {
-    'X-RapidAPI-Key': '8f5d1de56emsha50d58d4a66131bp129d28jsn8b6e15c6b65a',
+    'X-RapidAPI-Key': process.env.VUE_APP_RAPIDAPI_KEY,
     'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com',
   },
 });
+console.log('API Key:', 'You cant see me');
 
 export default {
   getCities(page = 1, limit = 10, region = '') {

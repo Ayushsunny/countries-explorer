@@ -1,5 +1,6 @@
-# countries-explorer
+# Countries Explorer
 
+```
 countries-explorer/
 ├── public/
 │   ├── index.html
@@ -9,23 +10,22 @@ countries-explorer/
 │   │   ├── CityCard.vue
 │   │   ├── CityGrid.vue
 │   │   ├── NearbyModal.vue
-│   │   └── Pagination.vue
+│   │   └── PaginationComponent.vue
 │   ├── services/
 │   │   └── api.service.js
 │   ├── store/
 │   │   ├── index.js
 │   │   └── modules/
 │   │       └── cities.module.js
-│   ├── utils/
-│   │   └── helpers.js
 │   ├── views/
-│   │   └── Home.vue
+│   │   └── HomeView.vue
 │   ├── App.vue
 │   └── main.js
 ├── .gitignore
 ├── babel.config.js
 ├── package.json
 └── vue.config.js
+```
 
 
 ## Project setup
