@@ -12,7 +12,7 @@
     <div class="content">
       <CityGrid v-if="view === 'grid'" :cities="filteredCities" @select-city="showNearbyModal" />
       <CityCard v-else-if="view === 'cards'" :cities="filteredCities" @select-city="showNearbyModal" />
-      <PaginationComponent :total-pages="totalPages" :current-page="currentPage" @page-change="fetchCities" />
+      <PaginationComponent :total-pages="totalPages" :current-page="currentPage" @page-change="handlePageChange" />
     </div>
     <NearbyModal v-if="selectedCity" :city="selectedCity" :nearby-cities="nearbyCities" @close="closeModal" />
   </div>
@@ -48,16 +48,19 @@ export default {
     },
   },
   created() {
-    this.fetchCities(1);
+    this.fetchCities({ page: 1, region: this.searchRegion });
   },
   methods: {
     ...mapActions('cities', ['fetchCities', 'fetchNearby']),
     toggleView(view) {
       this.view = view;
     },
-    searchCities() {
-      this.fetchCities(1);
+    handlePageChange(page) {
+      this.fetchCities({ page, region: this.searchRegion });
     },
+    searchCities() {
+    this.fetchCities({ page: 1, region: this.searchRegion });
+  },
     async showNearbyModal(city) {
       this.selectedCity = city;
       this.nearbyCities = await this.fetchNearby(city.id);

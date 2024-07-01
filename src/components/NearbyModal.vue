@@ -36,6 +36,7 @@ export default {
       required: true,
     },
   },
+  
   methods: {
     closeModal() {
       this.$emit('close');

@@ -1,7 +1,4 @@
 
-### 7. `src/components/PaginationComponent.vue`
-
-```vue
 <template>
   <div class="pagination">
     <button @click="changePage(currentPage - 1)" :disabled="currentPage === 1">Previous</button>

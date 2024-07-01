@@ -1,10 +1,12 @@
-import Vue from 'vue';
+import { createApp } from 'vue';
 import App from './App.vue';
 import store from './store';
+// import { LoadingPlugin, ErrorPlugin } from 'vue-loading-overlay';
 
-Vue.config.productionTip = false;
+const app = createApp(App);
 
-new Vue({
-  store,
-  render: h => h(App),
-}).$mount('#app');
+app.use(store);
+// app.use(LoadingPlugin);
+// app.use(ErrorPlugin);
+
+app.mount('#app');
